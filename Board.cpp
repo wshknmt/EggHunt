@@ -1,0 +1,41 @@
+#include "Board.h"
+
+Board::Board(int side, int eggsAmount) {
+	this->side = side;
+	this->eggsAmount = eggsAmount;
+
+    for (int i = 0; i < side; i++) {
+        std::vector<Field> v1;
+        for (int j = 0; j < side; j++) {
+            Field field;
+            v1.push_back(field);
+        }
+        fields.push_back(v1);
+    }
+}
+Board::Board() {
+
+}
+void Board::setRandom() {
+	int deplyedEggs = 0;
+    while (deplyedEggs < eggsAmount) {
+        int x = std::rand() % side;
+        int y = std::rand() % side;
+        if (fields[x][y].getType() == FieldType::EMPTY) {
+            fields[x][y].setType(FieldType::EGG);
+            deplyedEggs++;
+        }
+    }
+}
+
+void Board::print() {
+    for (int i = 0; i < fields.size(); i++) {
+        for (int j = 0; j < fields[i].size(); j++)
+            fields[i][j].print();
+        std::cout << std::endl;
+    }
+}
+
+std::vector <std::vector<Field> > Board::getFields() {
+    return fields;
+}
