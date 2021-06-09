@@ -11,10 +11,12 @@ int main() {
     int side = 5;
     int generations = 200;
     std::cout << "start" << std::endl;
-    Board board(side, 6);
-    board.setRandom();
-    board.print();
-    Population population(16, 8, side, board);
+
+    Board::getInstance();
+    Board::getInstance()->setRandom();
+    Board::getInstance()->print();
+
+    Population population(16, 8, side);
     population.print();
     //population.singleCrossover();
     //std::cout << "po krzyzowaniu" << std::endl;
@@ -34,7 +36,7 @@ int main() {
     }
 
     std::cout << "Board: " <<std::endl << std::endl;
-    board.print();
+    Board::getInstance()->print();
     std::cout << "Best specimen: " << std::endl << std::endl;
     population.getBestSpec().print();
     

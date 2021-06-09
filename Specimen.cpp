@@ -1,9 +1,8 @@
 #include "Specimen.h"
 
-Specimen::Specimen(int length, int side, Board board) {
+Specimen::Specimen(int length, int side) {
 	this->length = length;
 	this->side = side;
-	this->board = board;
 	grade = 0;
 	int randomNumber;
 	
@@ -49,8 +48,10 @@ MoveType Specimen::getRandomMove() {
 }
 
 bool Specimen::checkPosition(int xPosition, int yPosition) {
-	if (xPosition < 0 || xPosition >= side || yPosition < 0 || yPosition >= side 
-		|| board.getFields()[yPosition][xPosition].getType() == FieldType::WALL) return false;
+	/*if (xPosition < 0 || xPosition >= side || yPosition < 0 || yPosition >= side 
+		|| board.getFields()[yPosition][xPosition].getType() == FieldType::WALL) return false;*/
+	if (xPosition < 0 || xPosition >= side || yPosition < 0 || yPosition >= side
+		|| Board::getInstance()->getFields()[yPosition][xPosition].getType() == FieldType::WALL) return false;
 	return true;
 }
 
@@ -80,7 +81,7 @@ void Specimen::checkLeft() {
 }
 
 bool Specimen::checkEgg() {
-	if (board.getFields()[yPosition][xPosition].getType() == FieldType::EGG) 
+	if (Board::getInstance()->getFields()[yPosition][xPosition].getType() == FieldType::EGG) 
 		return true;
 	return false;
 }

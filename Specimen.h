@@ -6,7 +6,7 @@
 class Specimen
 {
 public:
-	Specimen(int length, int side, Board board);
+	Specimen(int length, int side);
 	Specimen();
 	void print();
 	std::vector<Move>& getMovesVector();
@@ -26,7 +26,6 @@ private:
 	std::vector <Move> moves;
 	int length;
 	int side;
-	Board board;
 	double grade;
 	int xPosition;
 	int yPosition;

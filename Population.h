@@ -7,7 +7,7 @@ class Population
 {
 public:
 	Population();
-	Population(int size, int specimenLength, int side, Board board);
+	Population(int size, int specimenLength, int side);
 	void print();
 	void singleCrossover();
 	void crossover(std::vector <Move>& mV1, std::vector <Move>& mV2, int number);
@@ -21,7 +21,6 @@ public:
 private:
 	int size;
 	std::vector <Specimen> specimens;
-	Board board;
 	double highestGrade;
 	Specimen bestSpec;
 };

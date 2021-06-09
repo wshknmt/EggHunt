@@ -1,12 +1,11 @@
 #include "Population.h"
 
-Population::Population(int populationSize, int specimenLength, int side, Board board) {
+Population::Population(int populationSize, int specimenLength, int side) {
 	this->size = populationSize;
-    this->board = board;
     highestGrade = -1.0;
 
 	for (int i = 0; i < size; i++) {
-		Specimen specimen(specimenLength, side, board);
+		Specimen specimen(specimenLength, side);
 		specimens.push_back(specimen);
 	}
     bestSpec = specimens[0];
