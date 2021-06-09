@@ -3,6 +3,9 @@
 #include <vector>
 #include "Move.h"
 #include "Board.h"
+
+typedef std::pair<int, int> CollectedEggPosition;
+
 class Specimen
 {
 public:
@@ -18,8 +21,12 @@ public:
 	void checkRight();
 	void checkDown();
 	void checkLeft();
+	void take();
+	void stop();
 	bool checkEgg();
-	int getGrade();
+	float getGrade();
+	int getCollectedEggs();
+	int getActionCounter();
 
 
 private:
@@ -31,5 +38,7 @@ private:
 	int yPosition;
 	int collectedEggs;
 	int actionsCounter;
+	std::vector <CollectedEggPosition> collectedEggPositions;
+
 };
 

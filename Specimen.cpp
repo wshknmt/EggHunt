@@ -1,5 +1,5 @@
 #include "Specimen.h"
-
+#include<algorithm>
 Specimen::Specimen(int length, int side) {
 	this->length = length;
 	this->side = side;
@@ -50,8 +50,8 @@ MoveType Specimen::getRandomMove() {
 bool Specimen::checkPosition(int xPosition, int yPosition) {
 	/*if (xPosition < 0 || xPosition >= side || yPosition < 0 || yPosition >= side 
 		|| board.getFields()[yPosition][xPosition].getType() == FieldType::WALL) return false;*/
-	if (xPosition < 0 || xPosition >= side || yPosition < 0 || yPosition >= side
-		|| Board::getInstance()->getFields()[yPosition][xPosition].getType() == FieldType::WALL) return false;
+	if (xPosition < 0 || xPosition >= side || yPosition < 0 || yPosition >= side) return false;
+	else if(Board::getInstance()->getFields()[yPosition][xPosition].getType() == FieldType::WALL) return false;
 	return true;
 }
 
@@ -80,6 +80,22 @@ void Specimen::checkLeft() {
 	}
 }
 
+void Specimen::take() {
+	actionsCounter++;
+	if (checkEgg()) {
+
+		CollectedEggPosition coordinates;
+		coordinates.first = xPosition;
+		coordinates.second = yPosition;
+		collectedEggPositions.push_back(coordinates);
+		collectedEggs++;
+		Board::getInstance()->setField(FieldType::EMPTY, xPosition, yPosition);
+	}
+}
+void Specimen::stop() {
+	if (collectedEggs < EGGS_AMOUNT) actionsCounter++;
+}
+
 bool Specimen::checkEgg() {
 	if (Board::getInstance()->getFields()[yPosition][xPosition].getType() == FieldType::EGG) 
 		return true;
@@ -97,30 +113,32 @@ void Specimen::calculateGrade() {
 		else if (moves[i].getMove() == MoveType::RIGHT) checkRight();
 		else if (moves[i].getMove() == MoveType::DOWN) checkDown();
 		else if (moves[i].getMove() == MoveType::LEFT) checkLeft();
+		else if (moves[i].getMove() == MoveType::TAKE) take();
+		else if (moves[i].getMove() == MoveType::STOP) stop();
 		else if (moves[i].getMove() == MoveType::RANDOM) {
 			moves[i].setRandom();
 			if (moves[i].getRandomSelectedMove() == MoveType::UP) checkUp();
 			else if (moves[i].getRandomSelectedMove() == MoveType::RIGHT) checkRight();
 			else if (moves[i].getRandomSelectedMove() == MoveType::DOWN) checkDown();
 			else if (moves[i].getRandomSelectedMove() == MoveType::LEFT) checkLeft();
-
+			else if (moves[i].getRandomSelectedMove() == MoveType::TAKE) take();
+			else if (moves[i].getRandomSelectedMove() == MoveType::STOP) stop();
 		}
-		else if (moves[i].getMove() == MoveType::TAKE) {
-			if (checkEgg()) {
-				collectedEggs++;
-			}
-		}
-		else if (moves[i].getMove() == MoveType::STOP) {
-
-		}
-
-		
-
 	}
 
-	grade = 1.0 * collectedEggs / actionsCounter;
+	grade = 1.0 * (float)collectedEggs / (float)actionsCounter;
+	std::cout << "Grade: " << grade << " colectedEggs: " << (float)collectedEggs << " actions: " << (float)actionsCounter << std::endl;
+	std::for_each(collectedEggPositions.begin(), collectedEggPositions.end(),
+		[&](const CollectedEggPosition& c) { Board::getInstance()->setField(FieldType::EGG, c.first, c.second); });
 }
 
-int Specimen::getGrade() {
+float Specimen::getGrade() {
 	return grade;
+}
+
+int Specimen::getCollectedEggs() {
+	return collectedEggs;
+}
+int Specimen::getActionCounter() {
+	return actionsCounter;
 }

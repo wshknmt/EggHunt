@@ -9,6 +9,8 @@ Population::Population(int populationSize, int specimenLength, int side) {
 		specimens.push_back(specimen);
 	}
     bestSpec = specimens[0];
+    std::cout << "init   ";
+    bestSpec.print();
 }
 
 Population::Population() {
@@ -31,7 +33,6 @@ void Population::singleCrossover() {
     }
 }
 
-
 void Population::crossover(std::vector <Move> & mV1, std::vector <Move> & mV2, int number)
 {
     std::vector <Move> temp;
@@ -48,14 +49,31 @@ void Population::crossover(std::vector <Move> & mV1, std::vector <Move> & mV2, i
     mV2.insert(mV2.begin(), temp.begin(), temp.begin() + number);
 }
 
-Population Population::selection() {
-    Population pop;
+void Population::selection() {
+    std::vector <Specimen> oldSpecimens = specimens;
+    specimens.clear();
     int temp;
-    for (unsigned int i = 0; i < specimens.size(); i++) {
-        temp = rand() % specimens.size();
-        pop.specimens.push_back(specimens[temp]);
+    for (unsigned int i = 0; i < oldSpecimens.size(); i++) {
+        temp = rand() % oldSpecimens.size();
+        specimens.push_back(oldSpecimens[temp]);
     }
-    return pop;
+}
+
+void Population::tourney_selection() {
+    std::vector <Specimen> oldSpecimens = specimens;
+    specimens.clear();
+    int j;
+    int k;
+    for (unsigned int i = 0; i < oldSpecimens.size(); ++i) {
+        j = rand() % oldSpecimens.size();
+        k = rand() % oldSpecimens.size();
+        if (oldSpecimens[j].getGrade() > oldSpecimens[k].getGrade()) {
+            specimens.push_back(oldSpecimens[j]);
+        }
+        else {
+            specimens.push_back(oldSpecimens[k]);
+        }
+    }
 }
 void Population::mutate() {
     for (unsigned int i = 0; i < specimens.size(); i++) {

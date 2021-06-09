@@ -37,6 +37,10 @@ void Board::setRandom() {
     }
 }
 
+void Board::setField(FieldType type, int x, int y) {
+    fields[y][x].setType(type);
+}
+
 void Board::print() {
     
     for (int i = 0; i < fields.size(); i++) {

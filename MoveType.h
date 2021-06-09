@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 enum class MoveType {
-	UP, RIGHT, DOWN, LEFT, RANDOM, TAKE, STOP
+	UP, RIGHT, DOWN, LEFT, RANDOM, TAKE, STOP, NONE
 };
 
 /*std::ostream& operator << (std::ostream& os, const Move& obj) {

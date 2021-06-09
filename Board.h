@@ -4,7 +4,7 @@
 #include "Field.h"
 
 #define SIDE 5
-#define EGGS_AMOUNT 9
+#define EGGS_AMOUNT 5
 
 class Board {
 public:
@@ -14,6 +14,7 @@ public:
 	void setRandom();
 	void print();
 	std::vector <std::vector<Field> > getFields();
+	void setField(FieldType type, int x, int y);
 
 private:
 	int side;

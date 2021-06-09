@@ -8,15 +8,14 @@
 
 int main() {
     srand(time(NULL));
-    int side = 5;
-    int generations = 200;
+    int generations = 100;
     std::cout << "start" << std::endl;
 
     Board::getInstance();
     Board::getInstance()->setRandom();
     Board::getInstance()->print();
 
-    Population population(16, 8, side);
+    Population population(20, 15, SIDE);
     population.print();
     //population.singleCrossover();
     //std::cout << "po krzyzowaniu" << std::endl;
@@ -25,13 +24,18 @@ int main() {
     int q = 0;
     std::cout << "START: " << std::endl<<std::endl;
     while (q < generations) {
-        popAfterSelection = population.selection();
-        popAfterSelection.singleCrossover();
-        popAfterSelection.updatePopulation();
-        popAfterSelection.mutate();
-        popAfterSelection.updatePopulation();
-        population = popAfterSelection;
-        std::cout << "highest grade: " << population.getHighestGrade() << std::endl;
+
+        population.tourney_selection();
+       //population.selection();
+        population.singleCrossover();
+        population.updatePopulation();
+        population.mutate();
+        population.updatePopulation();
+
+        std::cout << "highest grade: " << (float)population.getHighestGrade() << std::endl;
+       // population.print();
+        /*std::cout << "Best specimen: " << std::endl << std::endl;
+        population.getBestSpec().print();*/
         q++;
     }
 
@@ -39,6 +43,8 @@ int main() {
     Board::getInstance()->print();
     std::cout << "Best specimen: " << std::endl << std::endl;
     population.getBestSpec().print();
+    std::cout << "Collected eggs: " << population.getBestSpec().getCollectedEggs() << std::endl;
+    std::cout << "Action counter: " << population.getBestSpec().getActionCounter() << std::endl;
     
 }
 

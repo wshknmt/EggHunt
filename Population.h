@@ -11,7 +11,8 @@ public:
 	void print();
 	void singleCrossover();
 	void crossover(std::vector <Move>& mV1, std::vector <Move>& mV2, int number);
-	Population selection();
+	void selection();
+	void tourney_selection();
 	void mutate();
 	void updatePopulation();
 	double getHighestGrade();
