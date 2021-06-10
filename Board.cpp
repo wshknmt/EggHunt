@@ -3,8 +3,8 @@
 Board* Board::pInstance = nullptr;
 
 Board::Board(int side, int eggsAmount) {
-	this->side = side;
-	this->eggsAmount = eggsAmount;
+    this->side = side;
+    this->eggsAmount = eggsAmount;
 
     for (int i = 0; i < side; i++) {
         std::vector<Field> v1;
@@ -26,7 +26,7 @@ Board* Board::getInstance() {
 }
 
 void Board::setRandom() {
-	int deplyedEggs = 0;
+    int deplyedEggs = 0;
     while (deplyedEggs < eggsAmount) {
         int x = std::rand() % side;
         int y = std::rand() % side;
@@ -42,7 +42,7 @@ void Board::setField(FieldType type, int x, int y) {
 }
 
 void Board::print() {
-    
+
     for (int i = 0; i < fields.size(); i++) {
         for (int j = 0; j < fields[i].size(); j++)
             fields[i][j].print();

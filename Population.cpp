@@ -1,13 +1,19 @@
 #include "Population.h"
 
 Population::Population(int populationSize, int specimenLength, int side) {
-	this->size = populationSize;
+    int startX = -1;
+    int startY = -1;
+    do {
+        startX = rand() % side;
+        startY = rand() % side;
+    } while(Board::getInstance()->getFields()[startY][startX].getType() != FieldType::EMPTY );
+    this->size = populationSize;
     highestGrade = -1.0;
 
-	for (int i = 0; i < size; i++) {
-		Specimen specimen(specimenLength, side);
-		specimens.push_back(specimen);
-	}
+    for (int i = 0; i < size; i++) {
+        Specimen specimen(specimenLength, side, startX, startY);
+        specimens.push_back(specimen);
+    }
     bestSpec = specimens[0];
     std::cout << "init   ";
     bestSpec.print();
@@ -19,9 +25,9 @@ Population::Population() {
 
 void Population::print() {
     std::cout << std::endl << "Population: " << std::endl;
-	for (int i = 0; i < size; i++) {
-		specimens[i].print();
-	}
+    for (int i = 0; i < size; i++) {
+        specimens[i].print();
+    }
 }
 
 void Population::singleCrossover() {
@@ -38,12 +44,12 @@ void Population::crossover(std::vector <Move> & mV1, std::vector <Move> & mV2, i
     std::vector <Move> temp;
     temp.insert(temp.end(), mV1.begin(), mV1.begin() + number);
     std::reverse(mV1.begin(), mV1.end());
-    for (int i = 0; i < number; i++)   
-        mV1.pop_back();   
+    for (int i = 0; i < number; i++)
+        mV1.pop_back();
     std::reverse(mV1.begin(), mV1.end());
     mV1.insert(mV1.begin(), mV2.begin(), mV2.begin() + number);
     std::reverse(mV2.begin(), mV2.end());
-    for (int i = 0; i < number; i++)    
+    for (int i = 0; i < number; i++)
         mV2.pop_back();
     std::reverse(mV2.begin(), mV2.end());
     mV2.insert(mV2.begin(), temp.begin(), temp.begin() + number);
@@ -87,8 +93,9 @@ void Population::updatePopulation() {
         if (specimens[i].getGrade() > highestGrade) {
             highestGrade = specimens[i].getGrade();
             bestSpec = specimens[i];
+            bestSpecRabbitPositions = specimens[i].getRabbitPositions();
         }
-            
+
     }
 }
 
@@ -98,4 +105,14 @@ double Population::getHighestGrade() {
 
 Specimen Population::getBestSpec() {
     return bestSpec;
+}
+
+std::vector <Cooridinates> &Population::getBestSpecRabbitPositions() {
+    return bestSpecRabbitPositions;
+}
+void Population::printRabbitPostions() {
+    //std::cout<<"Startx: "<<bestSpec.getStartX()<< " StartY: "<<bestSpec.getStartY()<<std::endl;
+    for(int i = 0; i < bestSpecRabbitPositions.size(); i++) {
+        std::cout <<"x: "<< bestSpecRabbitPositions[i].first<<" y: "<<bestSpecRabbitPositions[i].second<<std::endl;
+    }
 }

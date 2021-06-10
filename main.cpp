@@ -1,12 +1,28 @@
-// EggHunt.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "MainWindow.h"
+#include "QtBoard.h"
+
+#include <QApplication>
 
 #include <iostream>
 #include <ctime>
 #include "Population.h"
 #include "Board.h"
 
-int main() {
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    //MainWindow w;
+   // w.show();
+
+
+
+
+
+
+
+
+
+
     srand(time(NULL));
     int generations = 100;
     std::cout << "start" << std::endl;
@@ -15,9 +31,9 @@ int main() {
     Board::getInstance()->setRandom();
     Board::getInstance()->print();
 
-    Population population(20, 15, SIDE);
+    Population population(20, 40, SIDE);
     population.print();
-    //population.singleCrossover();
+    //population.singasdleCrossover();
     //std::cout << "po krzyzowaniu" << std::endl;
     population.print();
     Population popAfterSelection;
@@ -43,18 +59,19 @@ int main() {
     Board::getInstance()->print();
     std::cout << "Best specimen: " << std::endl << std::endl;
     population.getBestSpec().print();
+    std::cout << "Best specimen rabbit positions: " << std::endl << std::endl;
+    population.getBestSpec().printRabbitPostions();
     std::cout << "Collected eggs: " << population.getBestSpec().getCollectedEggs() << std::endl;
     std::cout << "Action counter: " << population.getBestSpec().getActionCounter() << std::endl;
-    
+
+
+
+
+
+
+
+
+    QtBoard b(population.getBestSpecRabbitPositions(), population.getBestSpec());
+    b.exec();
+    return a.exec();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
