@@ -47,7 +47,9 @@ std::string Move::toString() {
         else if (randomSelectedMove == MoveType::TAKE) return "*TAKE ";
         else if (randomSelectedMove == MoveType::STOP) return "*STOP ";
         else return "RANDOM ";
+
     }
+    else return " ";
 }
 
 MoveType Move::getMove() {
@@ -88,4 +90,5 @@ std::string Move::getMoveName() {
         else return " ";
 
     }
+    return " ";
 }

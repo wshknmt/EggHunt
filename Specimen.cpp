@@ -50,6 +50,7 @@ MoveType Specimen::getRandomMove() {
     else if (randomNumber == 3) return MoveType::LEFT;
     else if (randomNumber == 4) return MoveType::TAKE;
     else if (randomNumber == 5) return MoveType::STOP;
+    else return MoveType::STOP;
 }
 
 bool Specimen::checkPosition(int xPosition, int yPosition) {
