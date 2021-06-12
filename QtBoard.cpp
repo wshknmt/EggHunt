@@ -106,7 +106,7 @@ void QtBoard::delay(int seconds) {
 }
 
 void QtBoard::on_exitButton_clicked() {
-    accept();
+    QCoreApplication::quit();
 }
 void QtBoard::resetBoard() {
     for(int i =0; i<SIDE; i++) {

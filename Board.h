@@ -6,8 +6,8 @@
 #include <cstdlib>
 #include "Field.h"
 
-#define SIDE 20
-#define EGGS_AMOUNT 40
+#define SIDE 5
+#define EGGS_AMOUNT 10
 
 class Board {
 public:

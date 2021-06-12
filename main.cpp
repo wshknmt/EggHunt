@@ -23,10 +23,10 @@ int main(int argc, char *argv[])
     }
     clock_t start = clock();
 
-    srand(100); //time(NULL)
+    srand(time(NULL)); //100
     int generations = 10000;
-    int populationSize = 200;
-    int specimenLength = 40;
+    int populationSize = 100;
+    int specimenLength = 150;//50
     int crossoverProbability = 20;
     int mutationProbability = 100;
     std::cout << "start" << std::endl;
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
         population.mutate(mutationProbability);
         population.updatePopulation();
 
-//        std::cout << "highest grade: " << (float)population.getHighestGrade() << std::endl;
+        std::cout << "highest grade: " << (float)population.getHighestGrade() << std::endl;
         if (q % (generations / 10) == 0) {
             file << "Population " << q << ", highest grade: " << (float)population.getHighestGrade() << "\n";
         }
@@ -80,6 +80,7 @@ int main(int argc, char *argv[])
     file << "Time: " << time << "s\n\n";
     file.close();
     QtBoard b(population.getBestSpecRabbitPositions(), population.getBestSpec());
+    b.setWindowIcon(QIcon(":/new/images/rabbit.jpg"));
     b.exec();
     return a.exec();
 }
