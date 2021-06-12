@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <iostream>
 
-
 Move::Move() {
     int randomNumber = rand() % 7;
     if (randomNumber == 0) move = MoveType::UP;

@@ -15,11 +15,10 @@
 #include "Specimen.h"
 
 namespace Ui {
-class QtBoard;
+    class QtBoard;
 }
 
-class QtBoard : public QDialog
-{
+class QtBoard : public QDialog {
     Q_OBJECT
 
 public:
@@ -34,31 +33,20 @@ public:
 
 private slots:
     void on_startButton_clicked();
-
     void on_exitButton_clicked();
-
     void on_resetButton_clicked();
 
 private:
     Ui::QtBoard *ui;
     QGraphicsScene *scene;
-    //QGraphicsEllipseItem *ellipse;
-
-    QGraphicsRectItem *rectangle;
-
     std::vector <std::vector <QGraphicsRectItem*> > qtBoard;
     std::vector <Cooridinates> rabbitPositions;
     Specimen bestSpecimen;
-
     QImage egg;
     QImage wall;
     QImage rabbit;
     QImage grass;
-
     bool reset;
-    bool fieldIsEgg;
-    int eggTaken;
-
 };
 
 #endif // QTBOARD_H

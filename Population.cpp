@@ -15,7 +15,6 @@ Population::Population(int populationSize, int specimenLength, int side) {
         specimens.push_back(specimen);
     }
     bestSpec = specimens[0];
-    bestSpec.print();
 }
 
 Population::Population() {
@@ -32,9 +31,8 @@ void Population::print() {
 void Population::singleCrossover(int crossoverProbability) {
     int number = specimens.size() / 2;
     for (int i = 0; i < (specimens.size() / 2); i++) {
-        if (rand() % 100 < crossoverProbability) //crossoverProbability
+        if (rand() % 100 < crossoverProbability)
             crossover(specimens[2 * i].getMovesVector(), specimens[2 * i + 1].getMovesVector(), number);
-
     }
 }
 
@@ -80,6 +78,7 @@ void Population::tourney_selection() {
         }
     }
 }
+
 void Population::mutate(int mutationProbability) {
     for (unsigned int i = 0; i < specimens.size(); i++) {
         specimens[i].mutate(mutationProbability);
@@ -110,7 +109,6 @@ std::vector <Cooridinates> &Population::getBestSpecRabbitPositions() {
     return bestSpecRabbitPositions;
 }
 void Population::printRabbitPostions() {
-    //std::cout<<"Startx: "<<bestSpec.getStartX()<< " StartY: "<<bestSpec.getStartY()<<std::endl;
     for(int i = 0; i < bestSpecRabbitPositions.size(); i++) {
         std::cout <<"x: "<< bestSpecRabbitPositions[i].first<<" y: "<<bestSpecRabbitPositions[i].second<<std::endl;
     }

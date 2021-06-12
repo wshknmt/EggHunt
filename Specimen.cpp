@@ -4,14 +4,12 @@ Specimen::Specimen(int length, int side, int startX, int startY) {
     this->length = length;
     this->side = side;
     grade = 0;
-    int randomNumber;
     this->startX = startX;
     this->startY = startY;
     for (int i = 0; i < length; i++) {
         Move move;
         moves.push_back(move);
     }
-
 }
 
 Specimen::Specimen() {
@@ -39,7 +37,6 @@ std::vector<Move>& Specimen::getMovesVector() {
 
 void Specimen::mutate(int mutationProbability) {
     int randomNumber = rand() % moves.size();
-
     if (rand() % 100 <= mutationProbability) {
         moves[randomNumber].setMove(getRandomMove());
     }
@@ -115,7 +112,6 @@ void Specimen::calculateGrade() {
     collectedEggs = 0;
     actionsCounter = 0;
     rabbitPositionsPushBack(xPosition, yPosition);
-
     for (int i = 0; i < moves.size(); i++) {
         if (moves[i].getMove() == MoveType::UP) checkUp();
         else if (moves[i].getMove() == MoveType::RIGHT) checkRight();
@@ -134,9 +130,7 @@ void Specimen::calculateGrade() {
         }
         rabbitPositionsPushBack(xPosition, yPosition);
     }
-
     grade = 1.0 * (float)collectedEggs / (float)actionsCounter;
-//    std::cout << "Grade: " << grade << " colectedEggs: " << (float)collectedEggs << " actions: " << (float)actionsCounter << std::endl;
     std::for_each(colectedEggsCoordiantes.begin(), colectedEggsCoordiantes.end(),
         [&](const Cooridinates& c) { Board::getInstance()->setField(FieldType::EGG, c.first, c.second); });
 }
@@ -175,5 +169,3 @@ int Specimen::getStartX() {
 int Specimen::getStartY() {
     return startY;
 }
-
-

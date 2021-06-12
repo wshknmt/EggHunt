@@ -15,14 +15,12 @@ SOURCES += \
     Population.cpp \
     QtBoard.cpp \
     Specimen.cpp \
-    main.cpp \
-    MainWindow.cpp
+    main.cpp
 
 HEADERS += \
     Board.h \
     Field.h \
     FieldType.h \
-    MainWindow.h \
     Move.h \
     MoveType.h \
     Population.h \
@@ -30,7 +28,6 @@ HEADERS += \
     Specimen.h
 
 FORMS += \
-    MainWindow.ui \
     QtBoard.ui
 
 # Default rules for deployment.

@@ -36,10 +36,6 @@ public:
     int getStartY();
     std::string toString();
 
-
-    //std::vector <Cooridinates> getBestSpecimenPositions();
-
-
 private:
     std::vector <Move> moves;
     int length;
@@ -55,7 +51,5 @@ private:
     std::vector <Cooridinates> rabbitPositions;
 
 };
-
-
 
 #endif // SPECIMEN_H

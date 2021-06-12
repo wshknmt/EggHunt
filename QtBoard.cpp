@@ -12,11 +12,6 @@ QtBoard::QtBoard(std::vector <Cooridinates> rabbitPositions, Specimen bestSpecim
     ui->eggsLabel->setText(QString(QString::number(bestSpecimen.getCollectedEggs())));
     ui->gradeLabel->setText(QString(QString::number(bestSpecimen.getGrade())));
     reset = false;
-    fieldIsEgg = false;
-    eggTaken = -1;
-
-    //int side = 7;
-
 
     int shift = (width()-80)/SIDE;
 
@@ -32,11 +27,6 @@ QtBoard::QtBoard(std::vector <Cooridinates> rabbitPositions, Specimen bestSpecim
     rabbit = rabbit.scaled(QSize(shift, shift));
     grass = grass.scaled(QSize(shift, shift));
 
-    //QBrush redBrush(Qt::red);
-   // QBrush blueBrush(Qt::blue);
-
-   // QPen blackPen(Qt::black);
-   // blackPen.setWidth(6);
     QBrush image;
     image.setTextureImage(grass);
     for(int i =0; i<SIDE; i++) {
@@ -106,27 +96,23 @@ void QtBoard::delay(int seconds) {
 }
 
 void QtBoard::on_exitButton_clicked() {
-    QCoreApplication::quit();
+    accept();
 }
+
 void QtBoard::resetBoard() {
     for(int i =0; i<SIDE; i++) {
-        //std::vector <QGraphicsRectItem*> rectV;
         for(int j = 0; j < SIDE; j++) {
-           // QGraphicsRectItem *newRect;
-           // newRect = scene->addRect(i*shift, j*shift, shift, shift);
             FieldType type = Board::getInstance()->getFields()[j][i].getType();
             if(type == FieldType::WALL) setRectWallImage(Cooridinates(i, j));
             else if(type == FieldType::EGG) setRectEggImage(Cooridinates(i, j));
             else if(type == FieldType::EMPTY) setRectGrassImage(Cooridinates(i, j));
         }
-        //qtBoard.push_back(rectV);
     }
     setRectRabbitImage(rabbitPositions[0]);
 }
 
 void QtBoard::on_resetButton_clicked() {
     reset = true;
-
     ui->startButton->setEnabled(true);
     ui->resetButton->setEnabled(false);
     delay(1);

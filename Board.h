@@ -1,13 +1,12 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-
 #include <vector>
 #include <cstdlib>
 #include "Field.h"
 
-#define SIDE 5
-#define EGGS_AMOUNT 10
+#define SIDE 20
+#define EGGS_AMOUNT 60
 
 class Board {
 public:

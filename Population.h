@@ -22,7 +22,6 @@ public:
     std::vector <Cooridinates> &getBestSpecRabbitPositions();
     void printRabbitPostions();
 
-
 private:
     int size;
     std::vector <Specimen> specimens;

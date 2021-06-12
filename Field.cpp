@@ -12,8 +12,6 @@ Field::Field() {
 }
 
 void Field::print() {
-    //const char* fieldTypes[] = { "WALL", "EMPTY", "EGG" };
-    //std::cout << fieldTypes[type] << " ";
     if (type == FieldType::WALL) std::cout << "WALL ";
     else if (type == FieldType::EMPTY) std::cout << "EMPTY ";
     else if (type == FieldType::EGG) std::cout << "EGG ";
