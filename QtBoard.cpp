@@ -97,9 +97,6 @@ void QtBoard::delay(int seconds) {
 
 void QtBoard::on_exitButton_clicked() {
     accept();
-   // QApplication::quit();
-
-
 }
 
 void QtBoard::resetBoard() {

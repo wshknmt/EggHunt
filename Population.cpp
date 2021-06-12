@@ -93,7 +93,6 @@ void Population::updatePopulation() {
             bestSpec = specimens[i];
             bestSpecRabbitPositions = specimens[i].getRabbitPositions();
         }
-
     }
 }
 
