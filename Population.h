@@ -5,6 +5,7 @@
 #include <vector>
 #include "Specimen.h"
 #include "Board.h"
+#include <algorithm>
 class Population
 {
 public:
