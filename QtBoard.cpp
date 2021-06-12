@@ -76,7 +76,7 @@ void QtBoard::on_startButton_clicked() {
     ui->startButton->setEnabled(false);
     ui->resetButton->setEnabled(true);
     Cooridinates prev = rabbitPositions[0];
-    for(int i = 1; i < rabbitPositions.size(); i++) {
+    for(unsigned int i = 1; i < rabbitPositions.size(); i++) {
         if(reset) break;
         setRectGrassImage(prev);
         setRectRabbitImage(rabbitPositions[i]);

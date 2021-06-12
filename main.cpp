@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     population.print();
     file << "Generations: " << generations << "\nPopulation size: " << populationSize << "\nSpecimen length: " << specimenLength << "\nBoard side: " << SIDE << "\nMutation probability: " <<
             mutationProbability << "\nCrossover probability: " << crossoverProbability << "\n";
-    int q = 9999;
+    int q = 0;
     while (q < generations && (clock() - start) / (float)CLOCKS_PER_SEC < 60) {
 
         population.tourney_selection();
@@ -60,11 +60,5 @@ int main(int argc, char *argv[])
     QtBoard b(population.getBestSpecRabbitPositions(), population.getBestSpec());
     b.setWindowIcon(QIcon(":/new/images/rabbit.jpg"));
     b.show();
-    /*if(!b.exec()) {
-        std::cout<<"tu";
-        a.exit(0);
-        QCoreApplication::quit();
-        a.quit();
-    }*/
     return a.exec();
 }

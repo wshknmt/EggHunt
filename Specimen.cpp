@@ -17,7 +17,7 @@ Specimen::Specimen() {
 }
 
 void Specimen::print() {
-    for (int i = 0; i < moves.size(); i++) {
+    for (unsigned int i = 0; i < moves.size(); i++) {
         moves[i].print();
     }
     std::cout << std::endl;
@@ -25,7 +25,7 @@ void Specimen::print() {
 
 std::string Specimen::toString() {
     std::string spec;
-    for (int i = 0; i < moves.size(); i++) {
+    for (unsigned int i = 0; i < moves.size(); i++) {
         spec += moves[i].toString();
     }
     return spec;
@@ -112,7 +112,7 @@ void Specimen::calculateGrade() {
     collectedEggs = 0;
     actionsCounter = 0;
     rabbitPositionsPushBack(xPosition, yPosition);
-    for (int i = 0; i < moves.size(); i++) {
+    for (unsigned int i = 0; i < moves.size(); i++) {
         if (moves[i].getMove() == MoveType::UP) checkUp();
         else if (moves[i].getMove() == MoveType::RIGHT) checkRight();
         else if (moves[i].getMove() == MoveType::DOWN) checkDown();
@@ -158,7 +158,7 @@ std::vector <Cooridinates> &Specimen::getRabbitPositions() {
 }
 
 void Specimen::printRabbitPostions() {
-    for(int i = 0; i < rabbitPositions.size(); i++) {
+    for(unsigned int i = 0; i < rabbitPositions.size(); i++) {
         std::cout <<"x: "<< rabbitPositions[i].first<<" y: "<<rabbitPositions[i].second<<std::endl;
     }
 }

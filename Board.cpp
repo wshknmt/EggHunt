@@ -43,8 +43,8 @@ void Board::setField(FieldType type, int x, int y) {
 
 void Board::print() {
 
-    for (int i = 0; i < fields.size(); i++) {
-        for (int j = 0; j < fields[i].size(); j++)
+    for (unsigned int i = 0; i < fields.size(); i++) {
+        for (unsigned int j = 0; j < fields[i].size(); j++)
             fields[i][j].print();
         std::cout << std::endl;
     }

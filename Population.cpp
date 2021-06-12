@@ -30,7 +30,7 @@ void Population::print() {
 
 void Population::singleCrossover(int crossoverProbability) {
     int number = specimens.size() / 2;
-    for (int i = 0; i < (specimens.size() / 2); i++) {
+    for (unsigned int i = 0; i < (specimens.size() / 2); i++) {
         if (rand() % 100 < crossoverProbability)
             crossover(specimens[2 * i].getMovesVector(), specimens[2 * i + 1].getMovesVector(), number);
     }
@@ -109,7 +109,7 @@ std::vector <Cooridinates> &Population::getBestSpecRabbitPositions() {
     return bestSpecRabbitPositions;
 }
 void Population::printRabbitPostions() {
-    for(int i = 0; i < bestSpecRabbitPositions.size(); i++) {
+    for(unsigned int i = 0; i < bestSpecRabbitPositions.size(); i++) {
         std::cout <<"x: "<< bestSpecRabbitPositions[i].first<<" y: "<<bestSpecRabbitPositions[i].second<<std::endl;
     }
 }
