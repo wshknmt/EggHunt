@@ -11,11 +11,11 @@ public:
     Population();
     Population(int size, int specimenLength, int side);
     void print();
-    void singleCrossover();
+    void singleCrossover(int crossoverProbability);
     void crossover(std::vector <Move>& mV1, std::vector <Move>& mV2, int number);
     void selection();
     void tourney_selection();
-    void mutate();
+    void mutate(int mutationProbability);
     void updatePopulation();
     double getHighestGrade();
     Specimen getBestSpec();

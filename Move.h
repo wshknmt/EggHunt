@@ -12,6 +12,7 @@ public:
     void setMove(MoveType mType);
     void setRandom();
     MoveType getRandomSelectedMove();
+    std::string toString();
 private:
     MoveType move;
     MoveType randomSelectedMove;

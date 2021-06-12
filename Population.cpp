@@ -15,7 +15,6 @@ Population::Population(int populationSize, int specimenLength, int side) {
         specimens.push_back(specimen);
     }
     bestSpec = specimens[0];
-    std::cout << "init   ";
     bestSpec.print();
 }
 
@@ -30,10 +29,10 @@ void Population::print() {
     }
 }
 
-void Population::singleCrossover() {
+void Population::singleCrossover(int crossoverProbability) {
     int number = specimens.size() / 2;
     for (int i = 0; i < (specimens.size() / 2); i++) {
-        if (rand() % 100 < 100) //crossoverProbability
+        if (rand() % 100 < crossoverProbability) //crossoverProbability
             crossover(specimens[2 * i].getMovesVector(), specimens[2 * i + 1].getMovesVector(), number);
 
     }
@@ -81,9 +80,9 @@ void Population::tourney_selection() {
         }
     }
 }
-void Population::mutate() {
+void Population::mutate(int mutationProbability) {
     for (unsigned int i = 0; i < specimens.size(); i++) {
-        specimens[i].mutate(50);
+        specimens[i].mutate(mutationProbability);
     }
 }
 

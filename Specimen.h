@@ -34,6 +34,7 @@ public:
     void printRabbitPostions();
     int getStartX();
     int getStartY();
+    std::string toString();
 
 
     //std::vector <Cooridinates> getBestSpecimenPositions();

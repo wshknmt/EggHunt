@@ -39,7 +39,6 @@ QtBoard::QtBoard(std::vector <Cooridinates> rabbitPositions, Specimen bestSpecim
    // blackPen.setWidth(6);
     QBrush image;
     image.setTextureImage(grass);
-    qInfo()<<"sidedfg "<<SIDE<<" width "<<width();
     for(int i =0; i<SIDE; i++) {
         std::vector <QGraphicsRectItem*> rectV;
         for(int j = 0; j < SIDE; j++) {
@@ -55,24 +54,6 @@ QtBoard::QtBoard(std::vector <Cooridinates> rabbitPositions, Specimen bestSpecim
         qtBoard.push_back(rectV);
     }
     setRectRabbitImage(rabbitPositions[0]);
-    qInfo()<<"jeszczczcz ";
-
-    //image.setTexture()
-
-
-
-   // QImage imageScaled = egg.scaled(QSize(shift, shift));
-
-   // qtBoard[5][5]->setBrush(image);
-    //qtBoard[5][6]->setBrush(blueBrush);
-    //       ;
-
-
-    //ellipse = scene->addEllipse(10,10,100,100, blackPen, redBrush);
-   /* rectangle = scene->addRect(-100, -100, 40, 40);
-    QGraphicsRectItem *rectangle2;
-    rectangle2 = scene->addRect(100, 100, 40, 40);*/
-    //rectangle->setFlag(QGraphicsItem::ItemIsMovable);
 
 }
 
@@ -107,18 +88,6 @@ void QtBoard::on_startButton_clicked() {
     Cooridinates prev = rabbitPositions[0];
     for(int i = 1; i < rabbitPositions.size(); i++) {
         if(reset) break;
-/*
-        setRectRabbitImage(rabbitPositions[i]);
-        if(Board::getInstance()->getFields()[rabbitPositions[i].first][rabbitPositions[i].second].getType() == FieldType::EGG) {
-           fieldIsEgg = true;
-           eggTaken = 0;
-        }
-        if(fieldIsEgg == true && bestSpecimen.getMovesVector()[i-1].getMove() == MoveType::TAKE) eggTaken = true;
-        ui->moveLabel->setText(QString(QString::fromStdString(bestSpecimen.getMovesVector()[i-1].getMoveName())));
-        if(eggTaken = 0) setRectEggImage(prev);
-        else setRectGrassImage(prev);
-        prev = rabbitPositions[i];
-        delay(1);*/
         setRectGrassImage(prev);
         setRectRabbitImage(rabbitPositions[i]);
         ui->moveLabel->setText(QString(QString::fromStdString(bestSpecimen.getMovesVector()[i-1].getMoveName())));

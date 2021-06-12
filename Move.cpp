@@ -30,8 +30,24 @@ void Move::print() {
         else if (randomSelectedMove == MoveType::TAKE) std::cout << "*TAKE ";
         else if (randomSelectedMove == MoveType::STOP) std::cout << "*STOP ";
         else std::cout << "RANDOM ";
+    }
+}
 
-
+std::string Move::toString() {
+    if (move == MoveType::UP) return "UP ";
+    else if (move == MoveType::RIGHT) return "RIGHT ";
+    else if (move == MoveType::DOWN) return "DOWN ";
+    else if (move == MoveType::LEFT) return "LEFT ";
+    else if (move == MoveType::TAKE) return "TAKE ";
+    else if (move == MoveType::STOP) return "STOP ";
+    else if (move == MoveType::RANDOM) {
+        if(randomSelectedMove == MoveType::UP) return "*UP ";
+        else if (randomSelectedMove == MoveType::RIGHT) return "*RIGHT ";
+        else if (randomSelectedMove == MoveType::DOWN) return "*DOWN ";
+        else if (randomSelectedMove == MoveType::LEFT) return "*LEFT ";
+        else if (randomSelectedMove == MoveType::TAKE) return "*TAKE ";
+        else if (randomSelectedMove == MoveType::STOP) return "*STOP ";
+        else return "RANDOM ";
     }
 }
 

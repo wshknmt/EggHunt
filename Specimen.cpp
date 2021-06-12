@@ -25,6 +25,14 @@ void Specimen::print() {
     std::cout << std::endl;
 }
 
+std::string Specimen::toString() {
+    std::string spec;
+    for (int i = 0; i < moves.size(); i++) {
+        spec += moves[i].toString();
+    }
+    return spec;
+}
+
 std::vector<Move>& Specimen::getMovesVector() {
     return moves;
 }
@@ -48,8 +56,6 @@ MoveType Specimen::getRandomMove() {
 }
 
 bool Specimen::checkPosition(int xPosition, int yPosition) {
-    /*if (xPosition < 0 || xPosition >= side || yPosition < 0 || yPosition >= side
-        || board.getFields()[yPosition][xPosition].getType() == FieldType::WALL) return false;*/
     if (xPosition < 0 || xPosition >= side || yPosition < 0 || yPosition >= side) return false;
     else if(Board::getInstance()->getFields()[yPosition][xPosition].getType() == FieldType::WALL) return false;
     return true;
@@ -130,7 +136,7 @@ void Specimen::calculateGrade() {
     }
 
     grade = 1.0 * (float)collectedEggs / (float)actionsCounter;
-    std::cout << "Grade: " << grade << " colectedEggs: " << (float)collectedEggs << " actions: " << (float)actionsCounter << std::endl;
+//    std::cout << "Grade: " << grade << " colectedEggs: " << (float)collectedEggs << " actions: " << (float)actionsCounter << std::endl;
     std::for_each(colectedEggsCoordiantes.begin(), colectedEggsCoordiantes.end(),
         [&](const Cooridinates& c) { Board::getInstance()->setField(FieldType::EGG, c.first, c.second); });
 }
