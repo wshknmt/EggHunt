@@ -58,6 +58,7 @@ int main(int argc, char *argv[])
     file << "Time: " << time << "s\n\n";
     file.close();
     QtBoard b(population.getBestSpecRabbitPositions(), population.getBestSpec());
+    b.setWindowTitle("EggHunt");
     b.setWindowIcon(QIcon(":/new/images/rabbit.jpg"));
     b.show();
     return a.exec();
