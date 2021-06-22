@@ -1,12 +1,11 @@
 #include "Population.h"
 
-Population::Population(int populationSize, int specimenLength, int side) {
-    int startX = -1;
-    int startY = -1;
+Population::Population(int populationSize, int specimenLength, int side, int startX, int startY) {
+    /*
     do {
         startX = rand() % side;
         startY = rand() % side;
-    } while(Board::getInstance()->getFields()[startY][startX].getType() != FieldType::EMPTY );
+    } while(Board::getInstance()->getFields()[startY][startX].getType() != FieldType::EMPTY );*/
     this->size = populationSize;
     highestGrade = -1.0;
 

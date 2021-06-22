@@ -3,7 +3,7 @@
 
 #include "FieldType.h"
 #include <iostream>
-
+#define SEED 100
 class Field
 {
 public:

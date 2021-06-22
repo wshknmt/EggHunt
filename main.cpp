@@ -8,6 +8,8 @@
 #include "Board.h"
 #include <fstream>
 
+
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -18,21 +20,26 @@ int main(int argc, char *argv[])
         return 1;
     }
     clock_t start = clock();
-    srand(time(NULL)); //100
+    srand(100); //100
     int generations = 10000;
     int populationSize = 100;
     int specimenLength = 50;
     int crossoverProbability = 20;
     int mutationProbability = 100;
+    int maxTime = 15;
     Board::getInstance()->setRandom();
+    Board::getInstance()->setStartPosition();
     Board::getInstance()->print();
-
-    Population population(populationSize, specimenLength, SIDE);
+    srand(time(NULL));
+    Population population(populationSize, specimenLength, SIDE, Board::getInstance()->getStartX(), Board::getInstance()->getStartY());
     population.print();
+
+    std::cout << "fisrt specimen: " << std::endl<< std::endl;
+    population.getBestSpec().print();
     file << "Generations: " << generations << "\nPopulation size: " << populationSize << "\nSpecimen length: " << specimenLength << "\nBoard side: " << SIDE << "\nMutation probability: " <<
             mutationProbability << "\nCrossover probability: " << crossoverProbability << "\n";
     int q = 0;
-    while (q < generations && (clock() - start) / (float)CLOCKS_PER_SEC < 60) {
+    while (q < generations && (clock() - start) / (float)CLOCKS_PER_SEC < maxTime) {
 
         population.tourney_selection();
         population.singleCrossover(crossoverProbability);

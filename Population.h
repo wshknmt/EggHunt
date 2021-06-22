@@ -10,7 +10,7 @@ class Population
 {
 public:
     Population();
-    Population(int size, int specimenLength, int side);
+    Population(int size, int specimenLength, int side, int startX, int startY);
     void print();
     void singleCrossover(int crossoverProbability);
     void crossover(std::vector <Move>& mV1, std::vector <Move>& mV2, int number);

@@ -1,0 +1,156 @@
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.1
+Best specimen: RIGHT RIGHT DOWN TAKE DOWN DOWN RIGHT TAKE LEFT UP LEFT LEFT STOP RIGHT LEFT TAKE RIGHT TAKE UP TAKE RIGHT RIGHT UP STOP *STOP TAKE STOP TAKE RIGHT TAKE RIGHT LEFT DOWN *LEFT UP STOP TAKE LEFT TAKE *UP TAKE DOWN DOWN LEFT DOWN TAKE DOWN UP RIGHT TAKE 
+Collected eggs: 7/60
+Action counter: 50
+Generations: 18
+Time: 5.015s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.04
+Best specimen: DOWN DOWN *LEFT TAKE LEFT LEFT STOP DOWN *TAKE STOP *RIGHT DOWN LEFT TAKE TAKE UP TAKE TAKE DOWN DOWN *LEFT LEFT STOP UP LEFT DOWN DOWN TAKE UP LEFT TAKE LEFT STOP TAKE TAKE STOP TAKE DOWN DOWN DOWN DOWN *DOWN UP UP *STOP LEFT UP TAKE *UP UP 
+Collected eggs: 4/60
+Action counter: 50
+Generations: 23
+Time: 5.178s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.08
+Best specimen: DOWN TAKE TAKE STOP DOWN DOWN DOWN TAKE DOWN *TAKE STOP TAKE LEFT DOWN DOWN STOP UP TAKE TAKE STOP TAKE LEFT TAKE DOWN RIGHT STOP LEFT STOP UP TAKE RIGHT STOP TAKE LEFT UP TAKE LEFT DOWN STOP DOWN *TAKE DOWN *UP UP TAKE DOWN DOWN RIGHT TAKE *TAKE 
+Collected eggs: 6/60
+Action counter: 50
+Generations: 23
+Time: 5.044s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.08
+Best specimen: STOP LEFT TAKE UP TAKE RIGHT STOP STOP *STOP RIGHT TAKE LEFT DOWN TAKE UP STOP UP TAKE DOWN UP RIGHT UP *TAKE UP RIGHT STOP DOWN LEFT DOWN LEFT STOP *STOP STOP UP STOP DOWN UP LEFT TAKE UP RIGHT TAKE UP *STOP LEFT UP TAKE *DOWN STOP LEFT 
+Collected eggs: 6/60
+Action counter: 50
+Generations: 23
+Time: 5.103s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.1
+Best specimen: STOP LEFT TAKE STOP DOWN DOWN DOWN *DOWN DOWN DOWN RIGHT TAKE *DOWN UP TAKE LEFT TAKE UP *TAKE STOP STOP STOP UP *STOP TAKE STOP DOWN *RIGHT RIGHT STOP RIGHT LEFT TAKE RIGHT LEFT UP LEFT TAKE LEFT UP RIGHT LEFT TAKE LEFT TAKE STOP RIGHT LEFT LEFT DOWN 
+Collected eggs: 7/60
+Action counter: 50
+Generations: 25
+Time: 5.152s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.1
+Best specimen: STOP RIGHT UP STOP TAKE LEFT TAKE UP UP RIGHT STOP TAKE TAKE LEFT RIGHT LEFT STOP LEFT *TAKE UP LEFT LEFT *TAKE LEFT RIGHT UP RIGHT TAKE TAKE DOWN STOP LEFT UP LEFT STOP UP UP STOP TAKE DOWN RIGHT DOWN LEFT RIGHT *STOP TAKE UP UP UP LEFT 
+Collected eggs: 6/60
+Action counter: 50
+Generations: 25
+Time: 5.075s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.08
+Best specimen: TAKE TAKE UP STOP UP RIGHT UP RIGHT TAKE TAKE *DOWN DOWN TAKE DOWN LEFT LEFT RIGHT LEFT TAKE *TAKE LEFT STOP DOWN UP TAKE UP UP UP DOWN TAKE UP STOP LEFT UP LEFT LEFT STOP *LEFT TAKE LEFT UP *DOWN DOWN RIGHT TAKE LEFT LEFT *RIGHT UP TAKE 
+Collected eggs: 6/60
+Action counter: 50
+Generations: 23
+Time: 5.19s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.08
+Best specimen: UP RIGHT TAKE STOP DOWN LEFT STOP RIGHT TAKE LEFT LEFT TAKE RIGHT STOP STOP UP STOP RIGHT TAKE LEFT TAKE TAKE DOWN RIGHT STOP LEFT UP UP UP LEFT TAKE UP TAKE STOP RIGHT RIGHT RIGHT LEFT TAKE *LEFT *UP RIGHT *LEFT STOP UP TAKE TAKE *STOP RIGHT UP 
+Collected eggs: 7/60
+Action counter: 50
+Generations: 25
+Time: 5.183s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.1
+Best specimen: STOP RIGHT TAKE TAKE UP LEFT DOWN STOP LEFT TAKE LEFT UP RIGHT UP UP TAKE STOP RIGHT TAKE STOP STOP STOP DOWN DOWN TAKE STOP *STOP DOWN LEFT UP UP STOP UP STOP LEFT STOP *TAKE UP TAKE UP STOP DOWN UP RIGHT STOP *TAKE STOP UP *TAKE STOP 
+Collected eggs: 6/60
+Action counter: 50
+Generations: 25
+Time: 5.078s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.12
+Best specimen: *TAKE RIGHT UP STOP *TAKE DOWN DOWN STOP STOP DOWN TAKE DOWN *TAKE LEFT TAKE STOP LEFT STOP UP *LEFT *STOP DOWN LEFT DOWN TAKE DOWN TAKE UP DOWN DOWN RIGHT TAKE DOWN TAKE STOP LEFT UP DOWN RIGHT STOP UP STOP RIGHT TAKE UP *LEFT UP UP STOP TAKE 
+Collected eggs: 6/60
+Action counter: 50
+Generations: 24
+Time: 5.099s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.08
+Best specimen: LEFT TAKE RIGHT UP DOWN DOWN UP RIGHT STOP TAKE DOWN STOP STOP STOP LEFT TAKE RIGHT TAKE DOWN DOWN DOWN UP RIGHT LEFT STOP TAKE LEFT TAKE TAKE DOWN LEFT TAKE UP TAKE LEFT LEFT DOWN TAKE DOWN TAKE RIGHT RIGHT RIGHT DOWN TAKE LEFT UP TAKE TAKE TAKE 
+Collected eggs: 9/60
+Action counter: 50
+Generations: 66
+Time: 15.134s
+
+Generations: 10000
+Population size: 100
+Specimen length: 50
+Board side: 20
+Mutation probability: 100
+Crossover probability: 20
+Population 0, highest grade: 0.08
+Best specimen: STOP LEFT TAKE UP *RIGHT *RIGHT TAKE STOP STOP DOWN TAKE LEFT DOWN RIGHT STOP TAKE DOWN DOWN TAKE UP UP DOWN TAKE TAKE STOP DOWN STOP LEFT LEFT DOWN RIGHT TAKE STOP TAKE *DOWN UP LEFT TAKE LEFT *UP DOWN DOWN TAKE DOWN STOP RIGHT STOP TAKE *DOWN UP 
+Collected eggs: 6/60
+Action counter: 50
+Generations: 72
+Time: 15.118s
+

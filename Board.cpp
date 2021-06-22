@@ -53,3 +53,16 @@ void Board::print() {
 std::vector <std::vector<Field> > Board::getFields() {
     return fields;
 }
+
+void Board::setStartPosition() {
+    do {
+        startX = rand() % side;
+        startY = rand() % side;
+    } while(getFields()[startY][startX].getType() != FieldType::EMPTY );
+}
+int Board::getStartX() {
+    return startX;
+}
+int Board::getStartY() {
+    return startY;
+}
