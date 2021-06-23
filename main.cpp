@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     srand(100); //100
     int generations = 10000;
     int populationSize = 100;
-    int specimenLength = 50;
+    int specimenLength = 40;
     int crossoverProbability = 20;
     int mutationProbability = 100;
     int maxTime = 15;
@@ -42,7 +42,9 @@ int main(int argc, char *argv[])
     while (q < generations && (clock() - start) / (float)CLOCKS_PER_SEC < maxTime) {
 
         population.tourney_selection();
+
         population.singleCrossover(crossoverProbability);
+
         population.updatePopulation();
         population.mutate(mutationProbability);
         population.updatePopulation();

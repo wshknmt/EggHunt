@@ -9,7 +9,7 @@
 
 
 #define SIDE 20
-#define EGGS_AMOUNT 60
+#define EGGS_AMOUNT 40
 
 
 class Board {

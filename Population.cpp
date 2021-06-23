@@ -7,6 +7,7 @@ Population::Population(int populationSize, int specimenLength, int side, int sta
         startY = rand() % side;
     } while(Board::getInstance()->getFields()[startY][startX].getType() != FieldType::EMPTY );*/
     this->size = populationSize;
+    this->specimenLength = specimenLength;
     highestGrade = -1.0;
 
     for (int i = 0; i < size; i++) {
@@ -28,8 +29,10 @@ void Population::print() {
 }
 
 void Population::singleCrossover(int crossoverProbability) {
-    int number = specimens.size() / 2;
+    int number = specimenLength/2;
+
     for (unsigned int i = 0; i < (specimens.size() / 2); i++) {
+
         if (rand() % 100 < crossoverProbability)
             crossover(specimens[2 * i].getMovesVector(), specimens[2 * i + 1].getMovesVector(), number);
     }

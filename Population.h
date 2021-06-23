@@ -29,6 +29,7 @@ private:
     double highestGrade;
     Specimen bestSpec;
     std::vector <Cooridinates> bestSpecRabbitPositions;
+    int specimenLength;
 };
 
 #endif // POPULATION_H
