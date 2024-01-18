@@ -5,7 +5,7 @@ Zadanie polega na znalezieniu optymalnej strategii dla królika, aby efektywnie 
 Aplikacja została napisana w systemie operacyjnym Windows w środowisku QT Creator z wykorzystaniem C++. Używamy QT 5 zamiast interfejsu konsolowego, ponieważ w ten sposób lepiej jest zobrazowany wynik działania algorytmu ewolucyjnego, a sama aplikacja jest bardziej przyjazna w użytkowaniu oraz ładniejsza.
 # Instrukcja
 Aplikację można uruchomić przy użyciu QT Creatora.
-Przy uruchamianiu programu użytkownik musi zdefiniować następujące parametry: generations, populationSize, specimenLength, crossoverProbability, mutationProbability.
+Przy uruchamianiu programu użytkownik musi zdefiniować następujące parametry: Liczba generacji, Rozmiar populacji, Rozmiar osobnika, Prawdopodobieństwo krzyżowania, Prawdopodobieństwo mutacji.
 # Ewaluacja
 Dla ziarna 100 została wygenerowana następująca plansza o rozmiarze 20x20 z 40 jajami.
 
